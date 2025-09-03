@@ -8,6 +8,17 @@
     {% load static %}
     <link href="{% static 'custom.css' %}" rel="stylesheet">
     <style>
+        /* Ensure cursor pointer for all interactive elements */
+        button, a, .btn, [onclick] {
+            cursor: pointer !important;
+        }
+        
+        /* Hover effects */
+        button:hover, a:hover, .btn:hover {
+            opacity: 0.8;
+        }
+        
+        /* Basic styles */
         body {
             font-family: 'Sarabun', sans-serif;
             background-color: #f8f9fa;
