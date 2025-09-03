@@ -116,9 +116,18 @@ function testJavaScript() {
 // Modal function
 function showLearnMoreDialog() {
     console.log('showLearnMoreDialog function called');
+    console.log('Bootstrap object:', typeof bootstrap);
+    console.log('Modal element:', document.getElementById('learnMoreModal'));
+    
     if (typeof bootstrap !== 'undefined') {
-        var modal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
-        modal.show();
+        try {
+            var modal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
+            modal.show();
+            console.log('Modal shown successfully');
+        } catch (error) {
+            console.error('Error showing modal:', error);
+            alert('เกิดข้อผิดพลาดในการแสดง modal: ' + error.message);
+        }
     } else {
         console.error('Bootstrap is not loaded');
         alert('Bootstrap ไม่ได้โหลด กรุณารีเฟรชหน้าเว็บ');
@@ -128,6 +137,7 @@ function showLearnMoreDialog() {
 // Test on page load
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Page loaded, testing JavaScript...');
+    console.log('Bootstrap loaded:', typeof bootstrap !== 'undefined');
     testJavaScript();
 });
 </script>
