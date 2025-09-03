@@ -128,7 +128,10 @@ STATICFILES_DIRS = [
 ]
 
 # Configure WhiteNoise for static files
-STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
+if not DEBUG:
+    STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
+else:
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Media files
 MEDIA_URL = config('MEDIA_URL', default='/media/')
