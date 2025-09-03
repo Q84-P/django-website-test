@@ -107,9 +107,28 @@
 </div>
 
 <script>
-function showLearnMoreDialog() {
-    var modal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
-    modal.show();
+// Test function
+function testJavaScript() {
+    console.log('JavaScript is working!');
+    alert('JavaScript ทำงานได้!');
 }
+
+// Modal function
+function showLearnMoreDialog() {
+    console.log('showLearnMoreDialog function called');
+    if (typeof bootstrap !== 'undefined') {
+        var modal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
+        modal.show();
+    } else {
+        console.error('Bootstrap is not loaded');
+        alert('Bootstrap ไม่ได้โหลด กรุณารีเฟรชหน้าเว็บ');
+    }
+}
+
+// Test on page load
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded, testing JavaScript...');
+    testJavaScript();
+});
 </script>
 {% endblock %}
