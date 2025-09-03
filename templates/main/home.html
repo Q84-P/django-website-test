@@ -8,9 +8,9 @@
     <div class="container">
         <h1 class="display-4 fw-bold mb-4">เว็บไซต์ของฉัน</h1>
         <p class="lead mb-4">เว็บไซต์ที่สร้างด้วย Django Framework และ Bootstrap</p>
-        <button class="btn btn-light btn-lg" onclick="alert('ปุ่มทำงานได้!')" style="cursor: pointer !important;">ทดสอบปุ่ม</button>
+        <button class="btn btn-light btn-lg" onclick="alert('ปุ่มทำงานได้!')" style="cursor: pointer !important; z-index: 9999 !important; position: relative !important;">ทดสอบปุ่ม</button>
         <br><br>
-        <a href="{% url 'about' %}" class="btn btn-primary btn-lg" style="cursor: pointer !important;">ไปหน้า About</a>
+        <a href="{% url 'about' %}" class="btn btn-primary btn-lg" style="cursor: pointer !important; z-index: 9999 !important; position: relative !important;">ไปหน้า About</a>
     </div>
 </section>
 
@@ -33,7 +33,7 @@
                         </div>
                         <h5 class="card-title">เร็วและเสถียร</h5>
                         <p class="card-text">เว็บไซต์ที่ทำงานได้อย่างรวดเร็วและเสถียรด้วย Django Framework</p>
-                        <button class="btn btn-primary" onclick="alert('Card 1 ทำงานได้!')">ทดสอบ</button>
+                        <button class="btn btn-primary" onclick="alert('Card 1 ทำงานได้!')" style="cursor: pointer !important; z-index: 9999 !important; position: relative !important;">ทดสอบ</button>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         </div>
                         <h5 class="card-title">รองรับมือถือ</h5>
                         <p class="card-text">ออกแบบให้ใช้งานได้ดีทั้งบนคอมพิวเตอร์และมือถือ</p>
-                        <button class="btn btn-success" onclick="alert('Card 2 ทำงานได้!')">ทดสอบ</button>
+                        <button class="btn btn-success" onclick="alert('Card 2 ทำงานได้!')" style="cursor: pointer !important; z-index: 9999 !important; position: relative !important;">ทดสอบ</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                         </div>
                         <h5 class="card-title">ปลอดภัย</h5>
                         <p class="card-text">ระบบความปลอดภัยที่แข็งแกร่งและเชื่อถือได้</p>
-                        <button class="btn btn-warning" onclick="alert('Card 3 ทำงานได้!')">ทดสอบ</button>
+                        <button class="btn btn-warning" onclick="alert('Card 3 ทำงานได้!')" style="cursor: pointer !important; z-index: 9999 !important; position: relative !important;">ทดสอบ</button>
                     </div>
                 </div>
             </div>
@@ -89,6 +89,8 @@
 button, a, .btn, [onclick] {
     cursor: pointer !important;
     pointer-events: auto !important;
+    z-index: 9999 !important;
+    position: relative !important;
 }
 
 button:hover, a:hover, .btn:hover {
@@ -113,6 +115,18 @@ button:hover, a:hover, .btn:hover {
 * {
     pointer-events: auto !important;
 }
+
+/* Remove any overlays */
+.hero-section, .py-5, .bg-light {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Make sure buttons are on top */
+.btn {
+    position: relative !important;
+    z-index: 9999 !important;
+}
 </style>
 
 <script>
@@ -126,6 +140,32 @@ function testClick() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Page loaded successfully!');
     alert('หน้าเว็บโหลดเสร็จแล้ว!');
+    
+    // Force enable all buttons
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function(button) {
+        button.style.pointerEvents = 'auto';
+        button.style.cursor = 'pointer';
+        button.style.zIndex = '9999';
+        button.style.position = 'relative';
+        
+        // Add click event
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Button clicked:', this.textContent);
+            alert('ปุ่ม ' + this.textContent + ' ทำงานได้!');
+        });
+    });
+    
+    // Force enable all links
+    var links = document.querySelectorAll('a');
+    links.forEach(function(link) {
+        link.style.pointerEvents = 'auto';
+        link.style.cursor = 'pointer';
+        link.style.zIndex = '9999';
+        link.style.position = 'relative';
+    });
 });
 
 // Add click event to all buttons
