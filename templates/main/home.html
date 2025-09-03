@@ -1,0 +1,81 @@
+{% extends 'main/base.html' %}
+
+{% block title %}หน้าแรก - เว็บไซต์ของฉัน{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">ยินดีต้อนรับสู่เว็บไซต์ของฉัน</h1>
+        <p class="lead mb-4">เว็บไซต์ที่สร้างด้วย Django Framework และ Bootstrap</p>
+        <a href="{% url 'about' %}" class="btn btn-light btn-lg">เรียนรู้เพิ่มเติม</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="fw-bold">คุณสมบัติเด่น</h2>
+                <p class="text-muted">เว็บไซต์ของเรามีคุณสมบัติที่น่าสนใจมากมาย</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h1 class="text-primary">🚀</h1>
+                        </div>
+                        <h5 class="card-title">เร็วและเสถียร</h5>
+                        <p class="card-text">เว็บไซต์ที่ทำงานได้อย่างรวดเร็วและเสถียรด้วย Django Framework</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h1 class="text-success">📱</h1>
+                        </div>
+                        <h5 class="card-title">รองรับมือถือ</h5>
+                        <p class="card-text">ออกแบบให้ใช้งานได้ดีทั้งบนคอมพิวเตอร์และมือถือ</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h1 class="text-warning">🔒</h1>
+                        </div>
+                        <h5 class="card-title">ปลอดภัย</h5>
+                        <p class="card-text">ระบบความปลอดภัยที่แข็งแกร่งและเชื่อถือได้</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-4">เกี่ยวกับเรา</h2>
+                <p class="lead mb-4">เราเป็นทีมพัฒนาที่มีความเชี่ยวชาญในการสร้างเว็บไซต์ด้วย Django Framework</p>
+                <p class="mb-4">เรามุ่งมั่นที่จะสร้างเว็บไซต์ที่มีคุณภาพสูง ใช้งานง่าย และตอบสนองความต้องการของลูกค้า</p>
+                <a href="{% url 'about' %}" class="btn btn-primary">อ่านเพิ่มเติม</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <h1 class="display-1 text-muted">💻</h1>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

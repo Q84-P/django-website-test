@@ -1,0 +1,11 @@
+# WSGI configuration for mywebsite project
+import os
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mywebsite.settings')
+
+application = get_wsgi_application()
+
+# For production deployment
+# from whitenoise import WhiteNoise
+# application = WhiteNoise(application)

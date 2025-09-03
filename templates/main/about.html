@@ -1,0 +1,114 @@
+{% extends 'main/base.html' %}
+
+{% block title %}เกี่ยวกับเรา - เว็บไซต์ของฉัน{% endblock %}
+
+{% block content %}
+<!-- About Header -->
+<section class="bg-primary text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold">เกี่ยวกับเรา</h1>
+                <p class="lead">เรียนรู้เพิ่มเติมเกี่ยวกับทีมและพันธกิจของเรา</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h2 class="fw-bold mb-4">🎯 พันธกิจของเรา</h2>
+                        <p class="lead mb-4">เรามุ่งมั่นที่จะสร้างเว็บไซต์ที่มีคุณภาพสูง ใช้งานง่าย และตอบสนองความต้องการของลูกค้า</p>
+                        
+                        <h3 class="fw-bold mb-3">💡 วิสัยทัศน์</h3>
+                        <p class="mb-4">เป็นผู้นำในการพัฒนาเว็บไซต์ด้วยเทคโนโลยีที่ทันสมัยและนวัตกรรมใหม่ๆ</p>
+                        
+                        <h3 class="fw-bold mb-3">🌟 ค่านิยมหลัก</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✅ <strong>คุณภาพ:</strong> มุ่งมั่นสร้างผลงานที่มีคุณภาพสูงสุด</li>
+                            <li class="mb-2">✅ <strong>นวัตกรรม:</strong> พัฒนาเทคโนโลยีใหม่ๆ อย่างต่อเนื่อง</li>
+                            <li class="mb-2">✅ <strong>ความไว้วางใจ:</strong> สร้างความเชื่อมั่นให้กับลูกค้า</li>
+                            <li class="mb-2">✅ <strong>การทำงานเป็นทีม:</strong> ร่วมมือกันเพื่อเป้าหมายร่วม</li>
+                        </ul>
+                        
+                        <h3 class="fw-bold mb-3">🛠️ เทคโนโลยีที่เราใช้</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">🐍 Python</li>
+                                    <li class="mb-2">🎯 Django Framework</li>
+                                    <li class="mb-2">💾 SQLite/PostgreSQL</li>
+                                    <li class="mb-2">🎨 HTML/CSS/JavaScript</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">🎨 Bootstrap</li>
+                                    <li class="mb-2">📱 Responsive Design</li>
+                                    <li class="mb-2">🔒 Security Best Practices</li>
+                                    <li class="mb-2">⚡ Performance Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="fw-bold">👥 ทีมของเรา</h2>
+                <p class="text-muted">ทีมพัฒนาที่มีความเชี่ยวชาญและประสบการณ์</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h1 class="text-primary">👨‍💻</h1>
+                        </div>
+                        <h5 class="card-title">นักพัฒนาเว็บ</h5>
+                        <p class="card-text">ผู้เชี่ยวชาญในการพัฒนาเว็บไซต์ด้วย Django และ Python</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h1 class="text-success">🎨</h1>
+                        </div>
+                        <h5 class="card-title">นักออกแบบ UI/UX</h5>
+                        <p class="card-text">ออกแบบประสบการณ์ผู้ใช้ที่สวยงามและใช้งานง่าย</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h1 class="text-warning">🔧</h1>
+                        </div>
+                        <h5 class="card-title">วิศวกรระบบ</h5>
+                        <p class="card-text">ดูแลระบบและความปลอดภัยของเว็บไซต์</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
