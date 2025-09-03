@@ -8,7 +8,9 @@
     <div class="container">
         <h1 class="display-4 fw-bold mb-4">เว็บไซต์ของฉัน</h1>
         <p class="lead mb-4">เว็บไซต์ที่สร้างด้วย Django Framework และ Bootstrap</p>
-        <button class="btn btn-light btn-lg" onclick="showLearnMoreDialog()" style="cursor: pointer !important;">เรียนรู้เพิ่มเติม</button>
+        <button class="btn btn-light btn-lg" onclick="alert('ปุ่มทำงานได้!')" style="cursor: pointer !important;">ทดสอบปุ่ม</button>
+        <br><br>
+        <a href="{% url 'about' %}" class="btn btn-primary btn-lg" style="cursor: pointer !important;">ไปหน้า About</a>
     </div>
 </section>
 
@@ -31,6 +33,7 @@
                         </div>
                         <h5 class="card-title">เร็วและเสถียร</h5>
                         <p class="card-text">เว็บไซต์ที่ทำงานได้อย่างรวดเร็วและเสถียรด้วย Django Framework</p>
+                        <button class="btn btn-primary" onclick="alert('Card 1 ทำงานได้!')">ทดสอบ</button>
                     </div>
                 </div>
             </div>
@@ -43,6 +46,7 @@
                         </div>
                         <h5 class="card-title">รองรับมือถือ</h5>
                         <p class="card-text">ออกแบบให้ใช้งานได้ดีทั้งบนคอมพิวเตอร์และมือถือ</p>
+                        <button class="btn btn-success" onclick="alert('Card 2 ทำงานได้!')">ทดสอบ</button>
                     </div>
                 </div>
             </div>
@@ -55,6 +59,7 @@
                         </div>
                         <h5 class="card-title">ปลอดภัย</h5>
                         <p class="card-text">ระบบความปลอดภัยที่แข็งแกร่งและเชื่อถือได้</p>
+                        <button class="btn btn-warning" onclick="alert('Card 3 ทำงานได้!')">ทดสอบ</button>
                     </div>
                 </div>
             </div>
@@ -79,37 +84,11 @@
     </div>
 </section>
 
-<!-- Modal Dialog -->
-<div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="learnMoreModalLabel">เรียนรู้เพิ่มเติม</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>ยินดีต้อนรับสู่เว็บไซต์ของเรา!</p>
-                <p>เว็บไซต์นี้สร้างด้วย Django Framework ซึ่งเป็น web framework ที่ทรงพลังและใช้งานง่าย</p>
-                <p>คุณสมบัติเด่น:</p>
-                <ul>
-                    <li>🚀 เร็วและเสถียร</li>
-                    <li>📱 รองรับมือถือ</li>
-                    <li>🔒 ปลอดภัยและเชื่อถือได้</li>
-                    <li>💻 ใช้งานง่าย</li>
-                </ul>
-                <p>หากต้องการข้อมูลเพิ่มเติม สามารถไปที่หน้า "เกี่ยวกับเรา" ได้เลย</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ตกลง</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <style>
 /* Inline CSS to ensure it works */
 button, a, .btn, [onclick] {
     cursor: pointer !important;
+    pointer-events: auto !important;
 }
 
 button:hover, a:hover, .btn:hover {
@@ -129,41 +108,34 @@ button:hover, a:hover, .btn:hover {
     transform: scale(1.05) !important;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
 }
+
+/* Ensure all elements are clickable */
+* {
+    pointer-events: auto !important;
+}
 </style>
 
 <script>
-// Test function
-function testJavaScript() {
-    console.log('JavaScript is working!');
+// Simple test function
+function testClick() {
     alert('JavaScript ทำงานได้!');
-}
-
-// Modal function
-function showLearnMoreDialog() {
-    console.log('showLearnMoreDialog function called');
-    console.log('Bootstrap object:', typeof bootstrap);
-    console.log('Modal element:', document.getElementById('learnMoreModal'));
-    
-    if (typeof bootstrap !== 'undefined') {
-        try {
-            var modal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
-            modal.show();
-            console.log('Modal shown successfully');
-        } catch (error) {
-            console.error('Error showing modal:', error);
-            alert('เกิดข้อผิดพลาดในการแสดง modal: ' + error.message);
-        }
-    } else {
-        console.error('Bootstrap is not loaded');
-        alert('Bootstrap ไม่ได้โหลด กรุณารีเฟรชหน้าเว็บ');
-    }
+    console.log('Button clicked!');
 }
 
 // Test on page load
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Page loaded, testing JavaScript...');
-    console.log('Bootstrap loaded:', typeof bootstrap !== 'undefined');
-    testJavaScript();
+    console.log('Page loaded successfully!');
+    alert('หน้าเว็บโหลดเสร็จแล้ว!');
+});
+
+// Add click event to all buttons
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            console.log('Button clicked:', this.textContent);
+        });
+    });
 });
 </script>
 {% endblock %}
