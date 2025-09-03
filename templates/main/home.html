@@ -8,7 +8,7 @@
     <div class="container">
         <h1 class="display-4 fw-bold mb-4">เว็บไซต์ของฉัน</h1>
         <p class="lead mb-4">เว็บไซต์ที่สร้างด้วย Django Framework และ Bootstrap</p>
-        <a href="{% url 'about' %}" class="btn btn-light btn-lg">เรียนรู้เพิ่มเติม</a>
+        <button class="btn btn-light btn-lg" onclick="showLearnMoreDialog()">เรียนรู้เพิ่มเติม</button>
     </div>
 </section>
 
@@ -78,4 +78,38 @@
         </div>
     </div>
 </section>
+
+<!-- Modal Dialog -->
+<div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="learnMoreModalLabel">เรียนรู้เพิ่มเติม</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>ยินดีต้อนรับสู่เว็บไซต์ของเรา!</p>
+                <p>เว็บไซต์นี้สร้างด้วย Django Framework ซึ่งเป็น web framework ที่ทรงพลังและใช้งานง่าย</p>
+                <p>คุณสมบัติเด่น:</p>
+                <ul>
+                    <li>🚀 เร็วและเสถียร</li>
+                    <li>📱 รองรับมือถือ</li>
+                    <li>🔒 ปลอดภัยและเชื่อถือได้</li>
+                    <li>💻 ใช้งานง่าย</li>
+                </ul>
+                <p>หากต้องการข้อมูลเพิ่มเติม สามารถไปที่หน้า "เกี่ยวกับเรา" ได้เลย</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ตกลง</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showLearnMoreDialog() {
+    var modal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
+    modal.show();
+}
+</script>
 {% endblock %}
