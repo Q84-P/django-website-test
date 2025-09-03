@@ -8,7 +8,7 @@
     <div class="container">
         <h1 class="display-4 fw-bold mb-4">เว็บไซต์ของฉัน</h1>
         <p class="lead mb-4">เว็บไซต์ที่สร้างด้วย Django Framework และ Bootstrap</p>
-        <button class="btn btn-light btn-lg" onclick="showLearnMoreDialog()">เรียนรู้เพิ่มเติม</button>
+        <button class="btn btn-light btn-lg" onclick="showLearnMoreDialog()" style="cursor: pointer !important;">เรียนรู้เพิ่มเติม</button>
     </div>
 </section>
 
@@ -105,6 +105,31 @@
         </div>
     </div>
 </div>
+
+<style>
+/* Inline CSS to ensure it works */
+button, a, .btn, [onclick] {
+    cursor: pointer !important;
+}
+
+button:hover, a:hover, .btn:hover {
+    opacity: 0.8;
+}
+
+.btn-light {
+    background: rgba(255,255,255,0.9) !important;
+    border: none !important;
+    border-radius: 25px !important;
+    padding: 10px 30px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-light:hover {
+    background: white !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+</style>
 
 <script>
 // Test function
